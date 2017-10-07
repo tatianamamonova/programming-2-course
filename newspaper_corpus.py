@@ -14,7 +14,7 @@ def download_page(pageUrl):
     # do something with the downloaded text
 
 commonUrl = 'https://vecherka.su/articles/news/'
-for i in range(129000, 130471):
+for i in range(128500, 130471):
     pageUrl = commonUrl + str(i) + '/'
     try:
         text = download_page(pageUrl)
@@ -145,6 +145,6 @@ for i in range(129000, 130471):
         os.mkdir(os.path.join('mystem-plain',year))
     if not os.path.exists(os.path.join('mystem-plain',year,month)):
         os.mkdir(os.path.join('mystem-plain',year,month))
-    os.system("C:\mystem.exe temporary.txt "+os.path.join('mystem-plain',year,month,str(i)+'.txt'))
+    os.system("C:\mystem.exe -cid temporary.txt "+os.path.join('mystem-plain',year,month,str(i)+'.txt'))
 
     os.remove('temporary.txt')
