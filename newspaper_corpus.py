@@ -14,7 +14,7 @@ def download_page(pageUrl):
     # do something with the downloaded text
 
 commonUrl = 'https://vecherka.su/articles/news/'
-for i in range(128500, 130471):
+for i in range(128500, 129972):
     pageUrl = commonUrl + str(i) + '/'
     try:
         text = download_page(pageUrl)
