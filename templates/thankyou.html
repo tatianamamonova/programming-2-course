@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta content="charset=UTF-8">
+	<title>Не ахти</title>
+	<style type="text/css">	
+		.outer {
+			display: table;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+
+		.middle {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.inner {
+			margin-left: auto;
+			margin-right: auto; 
+			width: 100%;
+			font-family: Monospace;
+			text-align: center;
+			font-size: 3em;
+		}
+		
+		#menu {
+			width: 100%;
+			height: 5%;
+			position: fixed;
+			z-index: 1;
+			top: 0.5%;
+			left: 0px;
+			font-family: Monospace;
+			font-size: 1.5em;
+		}
+	</style>
+</head>
+<body bgcolor="#FFE8E8">
+	<div id="menu">
+		&nbsp;
+		<a href="/"><b>Главная</b></a>
+		&nbsp;&nbsp;
+		<a href="/stats">Статистика</a>
+		&nbsp;&nbsp;
+		<a href="/json">JSON</a>
+		&nbsp;&nbsp;
+		<a href="/search">Поиск</a>
+	</div>
+	<div class="outer">
+		<div class="middle">
+			<div class="inner">
+				Спасибо, что прошли опрос!<br>
+				<a href="/stats" style="font-size: 0.8em;">Посмотреть статистику</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

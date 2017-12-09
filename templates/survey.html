@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta content="charset=UTF-8">
+	<title>Не ахти</title>
+	<style type="text/css">
+		h1 {
+			font-family: Monospace;
+			text-align: center;
+			margin-bottom: 0;
+			font-size: 2.5em;
+		}
+		
+		h2 {
+			font-family: Monospace;
+			text-align: center;
+			font-size: 1.5em;
+			margin-bottom: 0;
+		}
+		
+		tr {
+			text-align: center;
+		}
+		
+		td {
+			font-family: Monospace;
+			font-size: 1.2em;
+		}
+		
+		input {
+			text-align: center;
+		}
+		
+		.question {
+			display: inline-block;
+			text-align: center;
+			width: 100%;
+		}
+		
+		#menu {
+			width: 100%;
+			height: 5%;
+			position: fixed;
+			z-index: 1;
+			top: 0.5%;
+			left: 0px;
+			font-family: Monospace;
+			font-size: 1.5em;
+		}
+		
+		#star {
+			width: 100%;
+			height: 3%;
+			position: fixed;
+			bottom: 0px;
+			left: 0px;
+			font-family: Monospace;
+			text-align: right;
+			font-size: 1em;
+			background-color: #FFE8E8
+		}
+	</style>
+	<script>
+		function NecessaryAnswers() {
+			var IntervalID  = setInterval(function() {
+				var Children = 0;
+				var Checked = 0;
+				for (var i=0;i<document.getElementById("form").length;i++) if (document.getElementById("form")[i].checked) Checked += 1;
+				if (Checked == document.getElementById("form").children.length-1) {
+					showContinue();
+					clearInterval(IntervalID);
+				}
+			}, 50)
+		}
+		
+		function showContinue() {
+			document.getElementById("continue").style.display="block";
+		}
+	</script>
+</head>
+<body bgcolor="#FFE8E8" onload="NecessaryAnswers()">
+	<div id="menu">
+		&nbsp;
+		<a href="/"><b>Главная</b></a>
+		&nbsp;&nbsp;
+		<a href="/stats">Статистика</a>
+		&nbsp;&nbsp;
+		<a href="/json">JSON</a>
+		&nbsp;&nbsp;
+		<a href="/search">Поиск</a>
+	</div>
+	<h1 style="color: #5d0a0a;">Не ахти или не очень?</h1><br>
+	<form id="form" action="/thankyou" name="form">
+		<div>
+			<div>
+				<h2>Мюзиклы мне _____ интересны, но вот на классическую постановку я бы с удовольствием сходила. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="1" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="1" type="radio" value="2">Не ахти</td>
+								<td valign="top"><input name="1" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>____ слабый удар кулаком сбил его с ног. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr align="center">
+								<td valign="top"><input name="2" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="2" type="radio" value="2">Не ахти</td>
+								<td valign="top"><input name="2" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Все политики ____ нормальные, особенно те, которые выдвигаются в президенты. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="3" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="3" type="radio" value="2">Не ахти какие</td>
+								<td valign="top"><input name="3" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Я не люблю смотреть телевизор, там всегда _____ хорошие новости. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="4" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="4" type="radio" value="2">Не ахти какие</td>
+								<td valign="top"><input name="4" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Я думал, что он адекватный человек, но он оказался ____ нормальным. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="5" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="5" type="radio" value="2">Не ахти каким</td>
+								<td valign="top"><input name="5" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Если приедет налоговая, бухгалтер ____ обрадуется. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="6" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="6" type="radio" value="2">Не ахти как</td>
+								<td valign="top"><input name="6" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Признаться, я ____ специалист по ульчскому языку <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="7" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="7" type="radio" value="2">Не ахти какой</td>
+								<td valign="top"><input name="7" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Честно говоря, лингвист из вас ____. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="8" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="8" type="radio" value="2">Не ахти</td>
+								<td valign="top"><input name="8" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Прыгать с моста было ____ развлечение. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="9" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="9" type="radio" value="2">Не ахти</td>
+								<td valign="top"><input name="9" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Мало того, что книга бессмысленная, так она еще и ____ написана. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="10" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="10" type="radio" value="2">Не ахти как</td>
+								<td valign="top"><input name="10" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Был ____ прекрасный день: дождя не было, но дул пронизывающий до костей, совсем не летний ветер. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="11" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="11" type="radio" value="2">Не ахти какой</td>
+								<td valign="top"><input name="11" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Я всегда был ____ хорошим слушателем, вот и сейчас очень хотелось ее перебить и начать говорить о чем-то своем. <font color="#FF0000">*</font></h2>
+				<div class="question">
+					<table align="center" border="0" cellspacing="3">
+						<tbody>
+							<tr>
+								<td valign="top"><input name="12" type="radio" value="1">Не очень</td>
+								<td valign="top"><input name="12" type="radio" value="2">Не ахти каким</td>
+								<td valign="top"><input name="12" type="radio" value="0">Можно оба варианта</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="continue" style="display: none; width: 100%; text-align: center;">
+			<h2 class="question" style="font-size: 2em;">Спасибо!</h2><br>
+			<input class="question" style="width: auto; font-family: Monospace; font-size: 1.5em;" type="submit" value="Завершить тест">
+		</div>
+	</form>
+	<br>
+	<div id="star">
+		<b><font color="FF0000">*</font> ― обязательный вопрос&nbsp;</b>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta content="charset=UTF-8">
+	<title>Не ахти</title>
+	<style type="text/css">	
+		div {
+			font-family: Monospace;
+			text-align: center;
+			height: 100%;
+			width: 100%;
+			display: inline-block;
+			font-size: 1.5em;
+		}
+		
+		#menu {
+			width: 100%;
+			height: 5%;
+			position: fixed;
+			z-index: 1;
+			top: 0.5%;
+			left: 0px;
+			font-family: Monospace;
+			font-size: 1.5em;
+			text-align: left;
+		}
+	</style>
+</head>
+<body bgcolor="#FFE8E8">
+	<div id="menu">
+		&nbsp;
+		<a href="/"><b>Главная</b></a>
+		&nbsp;&nbsp;
+		<a href="/stats">Статистика</a>
+		&nbsp;&nbsp;
+		<a href="/json">JSON</a>
+		&nbsp;&nbsp;
+		<a href="/search">Поиск</a>
+	</div>
+	<br>
+	<div>
+	<b>JSON:</b>
+	</div>
+	<div>
+	{{ json_data }}
+	</div>
+</body>
+</html>
