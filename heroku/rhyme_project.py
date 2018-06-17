@@ -106,7 +106,7 @@ def stressed_syllables(cleaned_text):
 	stressed = []
 	body = cleaned_text
 	if len(body) == 0:
-		return [0]
+		return [1]
 	myurl = "https://ws3.morpher.ru/russian/addstressmarks"
 	req = urllib.request.Request(myurl)
 	req.add_header('Content-Type', 'text/plain; charset=utf-8')
@@ -135,7 +135,7 @@ def stressed_syllables(cleaned_text):
 		if out:
 			continue
 		else:
-			stressed.append(0)
+			stressed.append(int(count_syllables(word)/2) + 1)
 	return stressed
 
 def get_rhyme(lexeme):
